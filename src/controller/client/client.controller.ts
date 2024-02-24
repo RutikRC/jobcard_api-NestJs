@@ -9,7 +9,7 @@ export class ClientController {
     constructor(private readonly clientService: ClientService){}
 
         @Post()
-            async createClient(@Res() response, @Body() createClientDto: CreateClientDto) {
+        async createClient(@Res() response, @Body() createClientDto: CreateClientDto) {
             try {
                 const newClient = await this.clientService.createClient(createClientDto); // Ensure createClient method is defined in ClientService
                 return response.status(HttpStatus.CREATED).json({
